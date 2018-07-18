@@ -1,0 +1,22 @@
+{
+  "name": "kv-logger",
+  "version": "0.1.0",
+  "description": "logger utility for k-v style log",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocwind/node-kv-logger.git"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "Roc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rocwind/node-kv-logger/issues"
+  },
+  "homepage": "https://github.com/rocwind/node-kv-logger#readme"
+}
