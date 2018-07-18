@@ -80,7 +80,7 @@ var format = function (level, args, context) {
     var argsObj = Object.assign({}, context);
     if (len === 1) {
         var arg = args[0]
-        if (typeof arg !== 'object') {
+        if (typeof arg !== 'object' || !arg.msg) {
             Object.assign(argsObj, {
                 msg: arg,
             });
