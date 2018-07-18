@@ -1,5 +1,5 @@
 {
-  "name": "kv-logger",
+  "name": "node-kv-logger",
   "version": "0.1.0",
   "description": "logger utility for k-v style log",
   "main": "index.js",
