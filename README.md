@@ -2,6 +2,7 @@
 ---
 A k-v style logger for node.js. Only logs to console since [a 12-factor app should write logs to stdout](https://12factor.net/logs) 
 
+API definitions: [index.d.ts](index.d.ts)
 Checkout examples in: [test.js](test.js)
 
 text output
