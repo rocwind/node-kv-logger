@@ -76,26 +76,43 @@ var getFormatedTime = function () {
 }
 
 var format = function (level, args, context) {
-    var len = args.length;
     var argsObj = Object.assign({}, context);
+
+    var len = args.length;
+    var arg1 = args[0];
     if (len === 1) {
-        var arg = args[0]
-        if (typeof arg !== 'object' || !arg.msg) {
-            Object.assign(argsObj, {
-                msg: arg,
-            });
+        // single param, could be plain text or k-v object
+        if (typeof arg1 !== 'object' || !arg1.msg) {
+            // take as plain text
+            argsObj.msg = arg1;
         } else {
-            Object.assign(argsObj, arg);
+            // k-v object
+            Object.assign(argsObj, arg1);
         }
+    } else if (len === 2 && 
+        (typeof arg1 === 'string') && 
+        arg1 !== 'msg' &&
+        (typeof args[1] === 'object')) {
+        // msg string + k-v object
+        argsObj.msg = arg1;
+        Object.assign(argsObj, args[1]);
     } else {
-        for (var i=0; i < len-1; i += 2) {
+        var start = 0;
+        if (len & 1) {
+            // odd params, first is msg
+            argsObj.msg = arg1;
+            start = 1;
+        }
+        for (var i = start; i < len-1; i += 2) {
             argsObj[args[i]] = args[i+1];
         }
     }
 
+    // add default items
     argsObj.level = level;
     argsObj.time = getFormatedTime();
 
+    // json
     if (config.format === 'json') {
         return JSON.stringify(argsObj); 
     }
