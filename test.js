@@ -51,7 +51,7 @@ loggerWithSubContext.info('log with sub context');
 
 
 // config to json output and debug level
-// Don't do this in real code
+// Don't do this in real code, config should be only called once as the beginning
 logger.config({
     level: 'debug',
     format: 'json',
