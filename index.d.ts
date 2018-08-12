@@ -1,11 +1,14 @@
-export = new Logger;
+declare module "node-kv-logger" {
+    export class Logger {
+        config(options: object): void;
+        bindContext(kvContext: object): Logger;
 
-declare class Logger {
-    config(options: object): void;
-    bindContext(kvContext: object): Logger;
+        debug(msg: string|object, ...args: any[]): void;
+        info(msg: string|object, ...args: any[]): void;
+        warn(msg: string|object, ...args: any[]): void;
+        error(msg: string|object, ...args: any[]): void;
+    }
 
-    debug(msg: string|object): void;
-    info(msg: string|object): void;
-    warn(msg: string|object): void;
-    error(msg: string|object): void;
+    export = new Logger;
 }
+
