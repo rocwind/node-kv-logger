@@ -1,5 +1,8 @@
 # node-kv-logger
 ---
+NOTE: !!!THIS PACKAGE IS NO LONGER MAINTAINED!!!
+Please use [kv-logger](https://github.com/rocwind/node-kv-logger) instead.
+
 A k-v style logger for node.js. Only logs to console since [a 12-factor app should write logs to stdout](https://12factor.net/logs) 
 
 #### API definitions: [index.d.ts](index.d.ts)
